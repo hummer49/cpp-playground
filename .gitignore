@@ -1,0 +1,51 @@
+# Compiled Object files
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+
+# Executables
+*.out
+
+# Debug files
+*.pdb
+*.idb
+*.ilk
+*.map
+*.sbr
+
+# Temporary files
+*.swp
+*.swo
+*~
+.#*
+*.bak
+*.tmp
+*.log
+
+# IDE and build system files
+.vscode/
+.idea/
+.DS_Store
+CMakeLists.txt.user
+CMakeCache.txt
+build/
+Debug/
+Release/
+CMakeFiles/
+Makefile
+*.cbp # Code::Blocks project files
+*.vcxproj # Visual Studio project files
+*.sln # Visual Studio solution files
+ipch/ # Visual Studio Intellisense precompiled headers
+*.suo # Visual Studio solution user options
+bin/
+obj/
+
+# Other common exclusions
+__pycache__/
+node_modules/
