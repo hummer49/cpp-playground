@@ -64,6 +64,7 @@ class LinkedList{
                 node->set_next(this->head);
             }
             this->head = node;
+            this->size++;
         }
         void push_back(Node *node){
             // add node to tail
@@ -76,6 +77,7 @@ class LinkedList{
                 aux = aux->get_next();
             }
             aux->set_next(node);
+            this->size++;
         }
         void insert_node(unsigned int pos, Node *node){
             // add node at position pos
@@ -92,6 +94,7 @@ class LinkedList{
                 node->set_next(prev->get_next());
                 prev->set_next(node);
             }
+            this->size++;
         }
 
         void pop_front(){
@@ -104,6 +107,7 @@ class LinkedList{
                 return;
             }
             this->head = this->head->get_next();
+            this->size--;
         }
         void pop_back(){
             // remove last node
@@ -115,10 +119,19 @@ class LinkedList{
                 this->head = nullptr;
                 return;
             }
-            
+            this->size--;
         }
         void remove_node(unsigned int pos){
             //remove node at position pos
+            if(!this->head){
+                std::cout << "Empty list" << std::endl;
+                return;
+            }
+            if(pos > this->size - 1){
+                std::cout << "Index out of range" << std::endl;
+            }∆
+
+            this->size--;
         }
 
         Node *get_head(){
@@ -156,91 +169,8 @@ class LinkedList{
 
 
 int main(){
+    LinkedList list_0();
+
 
     return 0;
 }
-
-
-
-
-
-/*
-#include<iostream>
-
-class Node{
-    private:
-        Node *next;
-        int id;
-        int data;                   // placeholder for actual data
-    public:
-        Node(Node* next,int id,int data):
-            next(next),
-            id(id),
-            data(data)
-        {} // default constructor
-        ~Node(){}
-        void print_data(){
-            std::cout << "ID:\t" << this->id << std::endl;
-            std::cout << "DATA:\t" << this->data << std::endl;
-        }
-        void update_date(int new_data){
-            this->data = new_data;
-        }
-        void set_next(Node *next){
-            this->next = next;
-        }
-        Node *get_next(){
-            return this->next;
-        }
-};
-
-class D_Node : public Node{
-    private:
-        D_Node *prev;
-    public:
-        D_Node(D_Node *prev, Node* next, int id, int data):
-            prev(prev),
-            Node(next, id,data)
-        {}
-        void set_prev(D_Node *prev){
-            this->prev = prev;
-        }
-        D_Node *get_prev(){
-            return this->prev;
-        }
-};
-
-class linked_list{
-    private:
-        Node *head;
-        Node *tail;
-    public:
-        linked_list(): head(nullptr){}
-        void initialize(int id, int data){
-            Node *head = new Node(nullptr, id, data);
-            this->head = head;
-            this->tail = head;
-        }
-        // - Operations: Insertion, deletion, traversal, searching.
-        void insert_at(unsigned int pos, int id, int data){
-            if(!this->head){
-                //empty list
-                initialize(id, data);
-            }
-
-        }
-        Node *search_by_position(unsigned int pos){
-            Node *aux_0 = this->head;
-            Node *aux_1;
-            
-        }
-
-};
-
-
-int main(){
-
-    return 0;
-}
-
-*/
