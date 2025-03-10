@@ -6,7 +6,6 @@ Requisites:
     Operations: push (add an element), pop (remove the top element), peek (view the top element), isEmpty.
 */
 #include<iostream>
-#include<vector>
 
 
 class Item{
