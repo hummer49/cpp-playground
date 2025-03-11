@@ -129,7 +129,7 @@ class LinkedList{
             }
             if(pos > this->size - 1){
                 std::cout << "Index out of range" << std::endl;
-            }∆
+            }
 
             this->size--;
         }
